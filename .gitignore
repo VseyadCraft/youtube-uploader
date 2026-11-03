@@ -1,0 +1,41 @@
+# YouTube API Tokens & OAuth Credentials (CRITICAL SECRETS)
+client_secrets.json
+token.json
+**/token.json
+**/client_secrets.json
+*.token
+*.pickle
+.env
+
+# Local state & binaries
+history.json
+schedule_state.json
+channels/**/history.json
+ocr
+
+# Virtual environments
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.bak
+
+# Video & audio files (Large media)
+*.mp4
+*.mov
+*.wav
+*.mp3
+pending/
+uploaded/
+channels/**/pending/
+channels/**/uploaded/
+for_reupload/
+
+# Logs & temp files
+logs/
+*.log
+/tmp/
+
+# macOS
+.DS_Store
