@@ -192,6 +192,9 @@ def get_authenticated_service(channel=None):
                     creds.refresh(Request())
                     break
                 except Exception as e:
+                    if 'invalid_grant' in str(e).lower():
+                        print("❌ Токен авторизации истёк или отозван (invalid_grant). Повторы пропущены — требуется переавторизация (удалите token.json или запустите скрипт вручную).", flush=True)
+                        raise e
                     if attempt == 5:
                         raise e
                     print(f"⚠️ Ошибка обновления токена ({e}), повтор {attempt}/5 через {attempt * 3}с...", flush=True)
